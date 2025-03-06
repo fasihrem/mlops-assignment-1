@@ -2,7 +2,7 @@ name: Pytest Testing
 
 on:
   pull_request:
-    branches: [feature-testing]
+    branches: [test]
 
 jobs:
   build:
