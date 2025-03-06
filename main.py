@@ -11,7 +11,9 @@ X = pd.DataFrame(iris.data, columns=iris.feature_names)
 y = (iris.target == 0).astype(int)
 
 # Train/test data splitting
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=64)
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.3,
+                                                    random_state=64)
 
 # Training the model
 model = LogisticRegression()

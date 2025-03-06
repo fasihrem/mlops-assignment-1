@@ -1,0 +1,23 @@
+name: Pytest Testing
+
+on:
+  pull_request:
+    branches: [test]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.13"
+
+      - name: Install Dependencies
+        run: pip3 install pandas scikit-learn pytest
+
+      - name: Run Pytest
+        run: pytest tests/
